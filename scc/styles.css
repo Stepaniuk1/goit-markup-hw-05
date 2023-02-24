@@ -19,6 +19,8 @@ html {
   --background-color-team: #f4f4fd;
   --svg-item-color: #8e8f99;
   --active-color-footer: #31d0aa;
+  --background-color-modal: #fcfcfc;
+  --color-black: #000000;
 }
 
 body {
@@ -111,6 +113,8 @@ img {
 }
 
 .nav-link {
+  position: relative;
+
   padding-top: 24px;
   padding-bottom: 24px;
   display: block;
@@ -120,6 +124,18 @@ img {
   line-height: 1.5;
   letter-spacing: 0.02em;
 }
+
+.nav-link.current::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  content: '';
+  background-color: var(--active-color);
+}
+
 .nav-link:hover,
 .nav-link:focus {
   color: var(--active-color);
@@ -314,6 +330,9 @@ img {
   background-color: var(--active-color);
 }
 
+.modal-item {
+}
+
 .social-icon {
   width: 16px;
   height: 16px;
@@ -356,6 +375,71 @@ img {
 .svg-customers {
   width: 104px;
   height: 56px;
+}
+
+/* modal-hero */
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+  padding: 20px 0;
+
+  background-color: rgba(46, 47, 66, 0.4);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.modal {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 408px;
+  max-height: 576px;
+
+  background-color: var(--background-color-modal);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+
+  padding: 0;
+  margin: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+
+  background-color: var(--border-filter-color);
+}
+
+.modal-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 24px;
+  height: 24px;
+}
+
+.modal-icon {
+  width: 8px;
+  height: 8px;
+  fill: var(--color-black);
 }
 /*portfolio*/
 
@@ -414,6 +498,33 @@ img {
 .filter-link:focus {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
+.container-servise-info {
+  position: relative;
+  overflow: hidden;
+}
+
+.servise-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translatey(100%);
+  transition: transform 250ms;
+
+  padding: 20px 32px;
+
+  background-color: var(--brend-color);
+  color: var(--background-color-team);
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+
+.filter-link:hover .servise-info,
+.filter-link:focus .servise-info {
+  transform: translatey(0);
 }
 
 .project-container {
