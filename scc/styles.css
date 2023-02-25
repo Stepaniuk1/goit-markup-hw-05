@@ -123,6 +123,10 @@ img {
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.02em;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-link.current::after {
@@ -142,7 +146,7 @@ img {
 }
 
 .site-nav .current {
-  color: var(--brend-color);
+  color: var(--active-color);
 }
 .site-nav.nav-link .carrent:active {
   color: var(--active-color);
@@ -190,6 +194,10 @@ img {
   line-height: 1.07;
 }
 .button-hero {
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
   padding: 16px 32px;
   display: flex;
   margin-left: auto;
@@ -201,8 +209,13 @@ img {
   font-weight: 500;
 
   letter-spacing: 0.04em;
+  cursor: pointer;
 }
 
+.button-hero:hover,
+.button-hero:focus {
+  background-color: var(--active-color);
+}
 /*section-features */
 .features {
   padding-top: 120px;
@@ -315,6 +328,10 @@ img {
 }
 
 .social-link {
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -328,9 +345,6 @@ img {
 .social-link:hover,
 .social-link:focus {
   background-color: var(--active-color);
-}
-
-.modal-item {
 }
 
 .social-icon {
@@ -361,6 +375,10 @@ img {
 }
 
 .customers-link {
+  transition-property: fill, border-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -380,6 +398,10 @@ img {
 /* modal-hero */
 
 .backdrop {
+  transition-property: opacity, transform, background-color, visibility;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
   position: fixed;
   top: 0;
   left: 0;
@@ -402,6 +424,10 @@ img {
 }
 
 .modal {
+  transition-property: transform;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
   position: relative;
   width: 100%;
   height: 100%;
@@ -414,10 +440,15 @@ img {
   border-radius: 4px;
 }
 
+.backdrop.is-hidden .modal {
+  transform: scale(0);
+}
+
 .modal-close {
   position: absolute;
   top: 24px;
   right: 24px;
+  cursor: pointer;
 
   padding: 0;
   margin: 0;
@@ -425,6 +456,11 @@ img {
   border: 1px solid rgba(0, 0, 0, 0.1);
 
   background-color: var(--border-filter-color);
+}
+
+.modal-close:active {
+  background-color: var(--active-color);
+  fill: var(--white-color);
 }
 
 .modal-item {
@@ -439,8 +475,8 @@ img {
 .modal-icon {
   width: 8px;
   height: 8px;
-  fill: var(--color-black);
 }
+
 /*portfolio*/
 
 .portfolio {
@@ -456,6 +492,10 @@ img {
   margin-bottom: 72px;
 }
 .button-filter {
+  transition-property: color, background-color, box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
   padding: 12px 24px 12px 24px;
   background: #f4f4fd;
   cursor: pointer;
@@ -490,6 +530,10 @@ img {
 }
 
 .filter-link {
+  transition-property: box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
   display: block;
   text-decoration: none;
 }
@@ -506,13 +550,16 @@ img {
 }
 
 .servise-info {
+  transition-property: opacity, transform;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   transform: translatey(100%);
-  transition: transform 250ms;
 
   padding: 20px 32px;
 
@@ -593,6 +640,10 @@ img {
   height: 40px;
 }
 .footer-social-link {
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
   display: flex;
   align-items: center;
   justify-content: center;
